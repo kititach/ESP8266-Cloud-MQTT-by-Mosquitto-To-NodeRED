@@ -120,7 +120,7 @@ void loop() {
     uint16_t packetIdPub1 = mqttClient.publish(MQTT_PUB_TEST, 1, true, sendString.c_str());
 
     Serial.print("Publishing on topic " + String(MQTT_PUB_TEST) + " at QoS 1, packetId: " + String(packetIdPub1));
-    Serial.println(" Message: " + String(testString));
+    Serial.println(" Message: " + String(sendString));
 
   }
 }
