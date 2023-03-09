@@ -5,16 +5,19 @@
 #include "Adafruit_SHTC3.h"
 #include <SPI.h>
 
-#define WIFI_SSID "CPE_STAFF"                 //เปลี่ยน
-#define WIFI_PASSWORD "123456789"             //เปลี่ยน
+#define WIFI_SSID "REPLACE_WITH_YOUR_SSID"                      //เปลี่ยน
+#define WIFI_PASSWORD "REPLACE_WITH_YOUR_PASSWORD"              //เปลี่ยน
 
-#define MQTT_HOST IPAddress(203, 158, 245, 180)  //เปลี่ยน
-#define MQTT_PORT 1883
+//#define MQTT_HOST IPAddress(XXX, XXX, XXX, XXX)               //original 
+//#define MQTT_PORT 1883                                        //original 
 
-#define MQTT_USERNAME "admincpe"             //เปลี่ยน
-#define MQTT_PASSWORD "cpe2541"             //เปลี่ยน
+#define MQTT_HOST "0.tcp.ap.ngrok.io"                           //private broker 
+#define MQTT_PORT 14906                                         //private broker 
 
-#define MQTT_SUB_TEST "test2"                  //เปลี่ยน
+#define MQTT_USERNAME "REPLACE_WITH_YOUR_MQTT_USER"             //เปลี่ยน
+#define MQTT_PASSWORD "REPLACE_WITH_YOUR_MQTT_PASSWORD"         //เปลี่ยน
+
+#define MQTT_SUB_TEST "XXX"                                     //เปลี่ยน
 
 #define LED1 D5
 
