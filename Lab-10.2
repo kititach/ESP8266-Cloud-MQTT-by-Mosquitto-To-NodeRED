@@ -115,12 +115,12 @@ void loop() {
     previousMillis = currentMillis;
 
     // JSON
-    String sendString = {"Temperature:" + String(temp.temperature) + ",Humidity:" + String(humidity.relative_humidity)};
-    
+    String sendString;
+    DynamicJsonDocument doc(1024);
+    doc["temperature"] = temp.temperature;
+    doc["humidity"] = humidity.relative_humidity;
+    serializeJson(doc, sendString);
+    Serial.println(sendString);
     uint16_t packetIdPub1 = mqttClient.publish(MQTT_PUB_TEST, 1, true, sendString.c_str());
-
-    Serial.print("Publishing on topic " + String(MQTT_PUB_TEST) + " at QoS 1, packetId: " + String(packetIdPub1));
-    Serial.println(" Message: " + String(sendString));
-
   }
 }
