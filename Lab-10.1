@@ -9,13 +9,16 @@
 #define WIFI_SSID "REPLACE_WITH_YOUR_SSID"                      //เปลี่ยน
 #define WIFI_PASSWORD "REPLACE_WITH_YOUR_PASSWORD"              //เปลี่ยน
 
-#define MQTT_HOST IPAddress(XXX, XXX, XXX, XXX)                 //เปลี่ยน
-#define MQTT_PORT 1883
+//#define MQTT_HOST IPAddress(XXX, XXX, XXX, XXX)               //original 
+//#define MQTT_PORT 1883                                        //original 
+
+#define MQTT_HOST "0.tcp.ap.ngrok.io"                           //private broker 
+#define MQTT_PORT 14906                                         //private broker 
 
 #define MQTT_USERNAME "REPLACE_WITH_YOUR_MQTT_USER"             //เปลี่ยน
 #define MQTT_PASSWORD "REPLACE_WITH_YOUR_MQTT_PASSWORD"         //เปลี่ยน
 
-#define MQTT_SUB_TEST "XXX"                                    //เปลี่ยน
+#define MQTT_SUB_TEST "XXX"                                     //เปลี่ยน
 
 AsyncMqttClient mqttClient;
 Ticker mqttReconnectTimer;
