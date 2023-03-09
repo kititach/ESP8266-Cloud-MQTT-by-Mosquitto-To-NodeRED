@@ -9,13 +9,16 @@
 #define WIFI_SSID "REPLACE_WITH_YOUR_SSID"                      //เปลี่ยน
 #define WIFI_PASSWORD "REPLACE_WITH_YOUR_PASSWORD"              //เปลี่ยน
 
-#define MQTT_HOST IPAddress(XXX, XXX, XXX, XXX)                 //เปลี่ยน
-#define MQTT_PORT 1883
+//#define MQTT_HOST IPAddress(XXX, XXX, XXX, XXX)               //original 
+//#define MQTT_PORT 1883                                        //original 
+
+#define MQTT_HOST "0.tcp.ap.ngrok.io"                           //private broker 
+#define MQTT_PORT 14906                                         //private broker 
 
 #define MQTT_USERNAME "REPLACE_WITH_YOUR_MQTT_USER"             //เปลี่ยน
 #define MQTT_PASSWORD "REPLACE_WITH_YOUR_MQTT_PASSWORD"         //เปลี่ยน
 
-#define MQTT_SUB_TEST "XXX"                                    //เปลี่ยน
+#define MQTT_SUB_TEST "XXX"                                     //เปลี่ยน
 
 AsyncMqttClient mqttClient;
 Ticker mqttReconnectTimer;
@@ -114,8 +117,23 @@ void loop() {
   if (currentMillis - previousMillis >= interval) {
     // Save the last time a new reading was published
     previousMillis = currentMillis;
+    
+    // String testString = "Hello, world! #" + String(i);
+    // String testString = "Temperature: " + String(temp.temperature) + " C,Humidity: " + String(humidity.relative_humidity) + " %";
 
     // JSON
+    // String testString = "{\"Temperature\": {" + value + "} \"Humidity\": {" + value2 + "}}";
+    // String sendString = {"Temperature:" + String(temp.temperature) + ", Humidity:" + String(humidity.relative_humidity)};
+    // testString.toCharArray(data, (testString.length() + 1));
+
+    // Publish an MQTT message on topic test
+    // uint16_t packetIdPub1 = mqttClient.publish(MQTT_PUB_TEST, 1, true, String(testString).c_str());
+    
+    // uint16_t packetIdPub1 = mqttClient.publish(MQTT_PUB_TEST, 1, true, sendString.c_str());
+
+    // Serial.print("Publishing on topic " + String(MQTT_PUB_TEST) + " at QoS 1, packetId: " + String(packetIdPub1));
+    // Serial.println(" Message: " + String(sendString));
+
     String sendString;
     DynamicJsonDocument doc(1024);
     doc["temperature"] = temp.temperature;
