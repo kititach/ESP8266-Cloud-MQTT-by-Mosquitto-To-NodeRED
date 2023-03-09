@@ -4,6 +4,7 @@
 #include <AsyncMqttClient.h>
 #include "Adafruit_SHTC3.h"
 #include <SPI.h>
+#include <ArduinoJson.h>
 
 #define WIFI_SSID "REPLACE_WITH_YOUR_SSID"                      //เปลี่ยน
 #define WIFI_PASSWORD "REPLACE_WITH_YOUR_PASSWORD"              //เปลี่ยน
@@ -73,6 +74,7 @@ void onMqttDisconnect(AsyncMqttClientDisconnectReason reason) {
 }
 
 void onMqttPublish(uint16_t packetId) {
+  i = packetId;
   Serial.print("Publish acknowledged.");
   Serial.print("  packetId: ");
   Serial.println(packetId);
@@ -80,7 +82,6 @@ void onMqttPublish(uint16_t packetId) {
 
 void setup() {
   Serial.begin(115200);
-  Serial.println();
   Serial.println();
 
   wifiConnectHandler = WiFi.onStationModeGotIP(onWifiConnect);
@@ -102,13 +103,11 @@ void loop() {
     // Save the last time a new reading was published
     previousMillis = currentMillis;
     
-    String sendString = {"Hello, world! #" + String(i)};
-
-    // Publish an MQTT message on topic test
-    uint16_t packetIdPub1 = mqttClient.publish(MQTT_PUB_TEST, 1, true, String(sendString).c_str());
-
-    Serial.print("Publishing on topic " + String(MQTT_PUB_TEST) + " at QoS 1, packetId: " + String(packetIdPub1));
-    Serial.println(" Message: " + String(sendString));
-    i++;
+    String sendString;
+    DynamicJsonDocument doc(1024);
+    doc["Hello world #"] = String(i);
+    serializeJson(doc, sendString);
+    Serial.println(sendString);
+    uint16_t packetIdPub1 = mqttClient.publish(MQTT_PUB_TEST, 1, true, sendString.c_str());
   }
 }
