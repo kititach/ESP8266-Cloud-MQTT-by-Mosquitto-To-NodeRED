@@ -37,7 +37,6 @@ apt install tmux -y
 ```
 wget https://nextcloud.cpe.ipv9.me/s/YW9oskX3scwrDyt/download/ngrok-v3-stable-linux-amd64.tgz
 tar xvfz ngrok-v3-stable-linux-amd64.tgz
-ls -l
 cp ngrok /usr/local/bin/
 ngrok
 ngrok diagnose
