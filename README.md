@@ -20,7 +20,27 @@ apt update
 ```
 apt install tmux -y
 ```
-### tmux tutorial linux
+### tutorial linux https://www.hznet.de/unix/tmux.html
+
+### Start/Stop and attach/detach
+* tmux or tmux new -s <session-name> : tmux new -s 1  # start tmux and create a (unnamed) session
+* tmux ls                                             # Show all sessions plus the # of windows in each
+* tmux kill-session -t 1                              # exit all windows and kill the server
+
+### Window 
+* Manage Windows
+  * Ctrl+B C          — create new window
+  * Ctrl+B &          — kill window
+  * Ctrl+B ,          — rename window
+* Move/Switch Window
+  * Ctrl+B w          — list all windows
+  * Ctrl+B 0|1..      — switch to window <x> (or mouse click in status line if "set mouse on")
+  * Ctrl+B n          — next window
+  * Ctrl+B p          — previous window
+  * Ctrl+B w          — Choose a window (or session/pane) interactively
+  * Ctrl+B f <text>   — find a window which contains <text>
+  
+### Pane Options
 * Ctrl+B D — Detach from the current session.
 * Ctrl+B % — Split the window into two panes horizontally.
 * Ctrl+B " — Split the window into two panes vertically.
