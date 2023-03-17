@@ -76,3 +76,21 @@ bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/mast
 * node-red-restart : this stops and restarts the Node-RED service
 * node-red-log : this displays the log output of the service
 
+## How_To_Use_Cloudflared_Server
+
+## Downlode
+```
+curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
+```
+
+## Install
+```
+sudo dpkg -i cloudflared.deb 
+```
+
+## Change to your URL
+```
+cloudflared tunnel --url [http://localhost:port]
+```
+
+![2023-03-17_9-14-09](https://user-images.githubusercontent.com/48780839/225797890-e12d5077-82d9-4e0e-af50-2ffd1bf08622.png)
