@@ -24,7 +24,7 @@ apt install tmux -y
 
 ### Start/Stop and attach/detach
 * tmux or tmux new -s <session-name> : tmux new -s 1  — start tmux and create a (unnamed) session
-* tmux ls                                             — Show all sessions plus the # of windows in each
+* tmux ls                                             — Show all sessions plus the — of windows in each
 * tmux kill-session -t <session-number>               — exit all windows and kill the server
 * tmux a -t <session-number>                          — select-session 
 
