@@ -10,7 +10,7 @@
 ## How to install Server
 
 * Open Browser https://pve22.ipv9.me/
-* Login User: iot Pass: xxxx
+* Login User: xxxx Pass: xxxx
 
 ```
 apt update
