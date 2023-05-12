@@ -4,8 +4,6 @@
 
 ## Register Frist
 * github https://github.com/
-* ngrok https://dashboard.ngrok.com/login
-
 
 ## How to install Server
 
@@ -20,7 +18,7 @@ apt update
 ```
 apt install tmux -y
 ```
-### tutorial linux https://www.hznet.de/unix/tmux.html
+### Tutorial linux https://www.hznet.de/unix/tmux.html
 
 ### Start/Stop and attach/detach
 * tmux or tmux new -s [session-name]                  — start tmux and create a (unnamed) session
@@ -55,13 +53,14 @@ apt install tmux -y
 * Ctrl+B W — Open a panel to navigate across windows in multiple sessions.
 
 ## install ngrok
+* ngrok https://dashboard.ngrok.com/login
 ```
 wget https://nextcloud.cpe.ipv9.me/s/YW9oskX3scwrDyt/download/ngrok-v3-stable-linux-amd64.tgz
 tar xvfz ngrok-v3-stable-linux-amd64.tgz
 cp ngrok /usr/local/bin/
 ngrok
 ngrok diagnose
-ngrok config add-authtoken xxxxxx
+ngrok config add-authtoken {YOUR TOKEN}
 cat .config/ngrok/ngrok.yml
 ngrok http 1880
 ```
@@ -76,3 +75,22 @@ bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/mast
 * node-red-stop : this stops the Node-RED service
 * node-red-restart : this stops and restarts the Node-RED service
 * node-red-log : this displays the log output of the service
+
+## How_To_Use_Cloudflared_Server
+
+### Downlode
+```
+curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
+```
+
+### Install
+```
+sudo dpkg -i cloudflared.deb 
+```
+
+### Change to your URL
+```
+cloudflared tunnel --url [http://localhost:port]
+```
+
+![2023-03-17_9-14-09](https://user-images.githubusercontent.com/48780839/225797890-e12d5077-82d9-4e0e-af50-2ffd1bf08622.png)
