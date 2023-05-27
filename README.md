@@ -90,7 +90,7 @@ sudo dpkg -i cloudflared.deb
 
 ### Change to your URL
 ```
-cloudflared tunnel --url [http://localhost:port]
+cloudflared tunnel --url http://localhost:port
 ```
 
 ![2023-03-17_9-14-09](https://user-images.githubusercontent.com/48780839/225797890-e12d5077-82d9-4e0e-af50-2ffd1bf08622.png)
