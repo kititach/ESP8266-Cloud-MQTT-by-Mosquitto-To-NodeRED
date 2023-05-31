@@ -55,7 +55,7 @@ apt install tmux -y
 ## install ngrok
 * ngrok https://dashboard.ngrok.com/login
 ```
-wget https://nextc.ipv9.me/index.php/s/j48PMZXwsdMegHB
+wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
 tar xvfz ngrok-v3-stable-linux-amd64.tgz
 cp ngrok /usr/local/bin/
 ngrok
