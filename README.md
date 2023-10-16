@@ -68,6 +68,8 @@ ngrok http 1880 or tcp 1880
 ## install Node Red
 ```
 apt install build-essential git curl -y
+```
+```
 bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
 ```
 ### Node Red tutorial linux
