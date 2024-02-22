@@ -2,7 +2,7 @@
 
 # Node_red_Linux
 
-## Register Frist
+## Frist Register 
 * github https://github.com/
 
 ## How to install Server
