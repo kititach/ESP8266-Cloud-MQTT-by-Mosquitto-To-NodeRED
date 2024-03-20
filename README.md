@@ -7,7 +7,7 @@
 
 ## How to install Server
 
-* Open Browser https://pve22.ipv9.me/
+* Open Browser https://proxcpe01.khitkon.com
 * Login User: xxxx Pass: xxxx
 
 ```
