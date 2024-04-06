@@ -78,6 +78,14 @@ bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/mast
 * node-red-restart : this stops and restarts the Node-RED service
 * node-red-log : this displays the log output of the service
 
+### Autostart on boot
+```
+sudo systemctl enable nodered.service
+```
+```
+sudo systemctl disable nodered.service
+```
+
 ## How_To_Use_Cloudflared_Server
 
 ### Downlode
