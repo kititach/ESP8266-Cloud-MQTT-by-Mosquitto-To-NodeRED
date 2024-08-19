@@ -63,6 +63,8 @@ ngrok diagnose
 ngrok config add-authtoken {YOUR TOKEN}
 cat .config/ngrok/ngrok.yml
 ngrok http 1880 or tcp 1880
+P.S. 1880 (nodered)
+     1883 (mqtt)
 ```
 
 ## install Node Red
