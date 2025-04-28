@@ -7,7 +7,7 @@
 
 ## How to install Server
 
-* Open Browser https://proxcpe01.khitkon.com
+* Open Browser
 * Login User: xxxx Pass: xxxx
 
 ```
